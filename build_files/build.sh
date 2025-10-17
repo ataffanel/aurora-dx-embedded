@@ -12,6 +12,11 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 install -y clang
 
+# Zephyr development dependency
+dnf5 group install -y development-tools c-development
+dnf5 install -y cmake ninja-build gperf dfu-util dtc wget which \
+  python3-pip python3-tkinter xz file python3-devel SDL2-devel
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
